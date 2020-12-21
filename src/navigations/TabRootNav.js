@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import LogoutScreen from './../screens/Logout'
 import ProfileScreen from './../screens/Profile'
 import StackRootNav from './../navigations/StackRootNav'
+import ProfileDrawer from './ProfileDrawer'
 import { Icon } from 'react-native-elements';
 
 const TabRoot = createBottomTabNavigator()
@@ -22,7 +23,7 @@ const TabRootNav = () => {
                     } else if (route.name === 'profile') {
                         iconName = focused ? 'user-circle' : 'user-circle';
                         type = 'font-awesome-5'
-                    } else if (route.name === 'logout') {
+                    } else if (route.name === 'profiledrawer') {
                         iconName = focused ? 'sign-out-alt' : 'sign-out-alt';
                         type = 'font-awesome-5'
                     }
@@ -37,7 +38,7 @@ const TabRootNav = () => {
         >
             <TabRoot.Screen name='stackroot' component={StackRootNav} />
             <TabRoot.Screen name='profile' component={ProfileScreen} />
-            <TabRoot.Screen name='logout' component={LogoutScreen} />
+            <TabRoot.Screen name='profiledrawer' component={ProfileDrawer} />
             
 
         </TabRoot.Navigator>
